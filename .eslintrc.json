@@ -1,29 +1,21 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "airbnb",
-    "plugin:import/errors",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-    "prettier",
-    "plugin:prettier/recommended",
-    "prettier/react"
-  ],
-  "plugins": ["react", "import", "prettier", "jsx-a11y"],
-  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
   "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    }
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
   },
-  "env": {
-    "es6": true,
-    "browser": true,
-    "node": true,
-    "jest": true
-  },
+  "plugins": ["react"],
   "rules": {
     "no-console": 1,
     "linebreak-style": ["error", "unix"],
@@ -50,14 +42,5 @@
         ]
       }
     ]
-  },
-  "globals": {
-    "window": true,
-    "document": true,
-    "localStorage": true,
-    "FormData": true,
-    "FileReader": true,
-    "Blob": true,
-    "navigator": true
   }
 }
