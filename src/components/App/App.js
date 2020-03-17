@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Loader from 'react-loader-spinner';
+import PNotify from 'pnotify/dist/es/PNotify';
 //Components
 import ImageGallery from '../ImageGallery/ImageGallery';
 import SearchBar from '../SearchBar/SearchBar';
@@ -10,6 +11,7 @@ import Button from '../Button/Button';
 //styles
 import styles from './App.module.css';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import 'pnotify/dist/PNotifyBrightTheme.css';
 
 // https://pixabay.com/api/?q=что_искать&page=номер_страницы&key=твой_ключ&image_type=photo&orientation=horizontal&per_page=12
 
@@ -66,6 +68,7 @@ export default class App extends Component {
           images: [...this.state.images, ...data.hits],
         }),
       )
+      .catch(e => PNotify.error(e.message))
       .finally(() => {
         this.setState({ isLoading: false });
         window.scrollTo({
