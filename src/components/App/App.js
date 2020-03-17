@@ -1,12 +1,15 @@
+//Core
 import React, { Component } from 'react';
-import styles from './App.module.css';
-import SearchBar from '../SearchBar/SearchBar';
-import Button from '../Button/Button';
 import axios from 'axios';
-import ImageGallery from '../ImageGallery/ImageGallery';
 import Loader from 'react-loader-spinner';
+//Components
+import ImageGallery from '../ImageGallery/ImageGallery';
+import SearchBar from '../SearchBar/SearchBar';
 import Modal from '../Modal/Modal';
-import '../../../node_modules/react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import Button from '../Button/Button';
+//styles
+import styles from './App.module.css';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 // https://pixabay.com/api/?q=что_искать&page=номер_страницы&key=твой_ключ&image_type=photo&orientation=horizontal&per_page=12
 
@@ -37,7 +40,7 @@ export default class App extends Component {
   incrementPage = () => {
     this.setState(state => ({
       ...state,
-      page: this.state.page + 1,
+      page: state.page + 1,
     }));
   };
 
@@ -63,7 +66,6 @@ export default class App extends Component {
           images: [...this.state.images, ...data.hits],
         }),
       )
-      .catch(console.log)
       .finally(() => {
         this.setState({ isLoading: false });
         window.scrollTo({
