@@ -1,7 +1,8 @@
-import styles from './SearchBar.module.css';
-import PropTypes from 'prop-types';
-
+//Core
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+//Styles
+import styles from './SearchBar.module.css';
 
 export default class SearchBar extends Component {
   state = {

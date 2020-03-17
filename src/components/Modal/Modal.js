@@ -1,6 +1,8 @@
+//Core
 import React, { Component, createRef } from 'react';
-import styles from './Modal.module.css';
 import PropTypes from 'prop-types';
+//Styles
+import styles from './Modal.module.css';
 
 export default class Modal extends Component {
   overlayRef = createRef();

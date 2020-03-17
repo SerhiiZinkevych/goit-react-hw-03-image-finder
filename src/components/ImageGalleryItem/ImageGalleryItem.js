@@ -1,5 +1,7 @@
+// Core
 import React from 'react';
 import PropTypes from 'prop-types';
+// Styles
 import styles from './ImageGalleryItem.module.css';
 
 const ImageGalleryItem = ({ link, alt, onImageClick }) => (
